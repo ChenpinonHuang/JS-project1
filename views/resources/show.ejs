@@ -2,3 +2,27 @@
   Step 1: This is your descretion how you would like to display data,
   but you must list display only one document based on the passed ID.
 -->
+
+<%- include ('../partials/header') %>
+
+<div class="container my-5">
+  <header>
+    <h1>
+      <%= resource.title %>
+      <a href="/resources/<%= resource.id %>/edit">
+        <i class="fa fa-edit"></i>
+      </a>
+    </h1>
+    <br>
+    <small>
+      <%= (resource.updatedAt.toLocaleString("en-CA")) %>
+    </small>
+    <p><strong>By: <%= resource.user.fullname %></strong></p>
+  </header>
+  <hr>
+  <div class="content">
+    <%- resource.content %>
+  </div>
+</div>
+
+<%- include ('../partials/footer') %>
